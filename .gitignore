@@ -1,7 +1,11 @@
 __pycache__/
 /outputs
 /examples
-
+api/images
+civitai
+loras
+models
+scraped_images
 inference_endpoint.py
 main.py
 welcome.py
