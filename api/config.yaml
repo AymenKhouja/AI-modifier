@@ -1,0 +1,38 @@
+pipeline:
+  segmentation_model:
+    - "mattmdjaga/segformer_b2_clothes"
+    - "jonathandinu/face-parsing"
+  inpaint_model: "models/absolutereality_v181.safetensors"
+  torch_dtype: "torch.float16"
+  device: "cuda"
+  disable_safety_checker: true
+
+general:
+  lora_scale: 0.1
+  negative_prompt: "(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, disconnected limbs, mutation, mutated, ugly, disgusting, amputation"
+  not_included:
+    - 'hair'
+    - 'face'
+    - 'left-leg'
+    - 'right-leg'
+    - 'left-arm'
+    - 'right-arm'
+    - 'background'
+    - 'hat'
+    - 'sunglasses'
+  not_included_body:
+    - background
+    - hair
+    - face
+    - left-leg
+    - right-leg
+  not_included_face:
+    - background
+    - cloth
+
+paths:
+  input_folder: "Bureau/ai_modifier"
+  output_folder: "Bureau/ai_modifier"
+
+prompts:
+  - "RAW photo, high-quality, completely beautiful garden."
