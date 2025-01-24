@@ -1,6 +1,7 @@
 __pycache__/
 /outputs
 /examples
+/data
 api/images
 civitai
 loras
